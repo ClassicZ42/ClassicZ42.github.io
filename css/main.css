@@ -175,12 +175,7 @@ background:rgba(0,0,0,0.0);
 
 
 
-.prod1{
-  background-color: lightgrey;
-  margin: 20px;
-  margin-bottom: 30px;
 
-}
 
 
 
@@ -417,12 +412,12 @@ word-wrap: break-word;
  .btn-primary {
     color: white;
     background-color: black;
-    border-color: black; /*set the color you want here*/
+    border-color: black;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: black;
     background-color: gray;
-    border-color: gray; /*set the color you want here*/
+    border-color: gray;
 }
 
 .prod-range{
@@ -452,57 +447,72 @@ background-color: grey;
   background-size: auto;
 }
 
+/*                                 */
+/*                                 */
+/*                                 */
+/*  product range grid
+*/
 
-/* port grid
+@media (min-width: 767px){
 
-
-/*  SECTIONS  */
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
+.myGridWrapper{
+  display: grid;
+  grid-template-columns: repeat(5 , 1fr);
+  grid-auto-rows: minmax(150px;auto);
+  grid-gap: 1em;
+  grid-template-areas:
+   "prod1 prod2 prod3 prod4 prod5"
+  ;
+}
 }
 
-/*  COLUMN SETUP  */
-.col {
-	display: block;
-	float:left;
-	margin: 1% 0 1% 0%;
-}
-.col:first-child { margin-left: 0; }
+@media (max-width: 767px) {
 
-/*  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
+  .myGridWrapper{
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+    grid-auto-rows: minmax(150px;auto);
+    grid-gap: 1em;
+    grid-template-areas:
+     "prod1 prod1 prod1 prod1 prod1"
+     "prod2 prod2 prod2 prod2 prod2"
+     "prod3 prod3 prod3 prod3 prod3"
+     "prod4 prod4 prod4 prod4 prod4"
+     "prod5 prod5 prod5 prod5 prod5"
+
+    ;
+    padding:  1em 1em 1em 1em;
+    background-color: lightgrey;
+  }
 
 
-
-/*  GRID OF FIVE  */
-.span_5_of_5 {
-width: 100%;
-}
-.span_4_of_5 {
-width: 80%;
-}
-.span_3_of_5 {
-width: 60%;
-}
-.span_2_of_5 {
-width: 40%;
-}
-.span_1_of_5 {
-width: 20%;
 }
 
-/*  GO FULL WIDTH BELOW 480 PIXELS */
-@media only screen and (max-width: 576px) {
-.col {  margin: 1% 0 1% 0%; }
-.span_1_of_5, .span_2_of_5, .span_3_of_5, .span_4_of_5, .span_5_of_5 { width: 100%; }
-}
 
-@media only screen and (max-width: 768px) {
-.col {  margin: 2% 0 2% 0%; }
-.span_1_of_5, .span_2_of_5, .span_3_of_5, .span_4_of_5, .span_5_of_5 { width: 50% ; }
+
+/* area's */
+.prod1{
+
+    grid-area: prod1;
+
+}
+.prod2{
+
+    grid-area: prod2;
+
+}
+.prod3{
+
+    grid-area: prod3;
+
+}
+.prod4{
+
+    grid-area: prod4;
+
+}
+.prod5{
+
+    grid-area: prod5;
+
 }
